@@ -1,0 +1,13 @@
+<h1>Class Binding</h1>
+<h3 [class.gray]="h1Style">Sample 1</h3>
+<h3 [ngClass]="{ 'blue': h1Style, 'green': !h1Style }">Sample 2</h3>
+
+
+<h1>Style Binding</h1>
+<h3 [style.color]="h1Style ? 'yellow':'cyan'">Sample 3</h3>
+<h3 [ngStyle]="{ 
+  'color': h1Style ? '#ccc': '#888',
+  'font-size': !h1Style ? '1em': '1.2em'
+}">Sample 4</h3>
+
+<button (click)="firstClick()">Click Me</button>
