@@ -1,3 +1,12 @@
-<p>
-  about works!
-</p>
+<h2>{{name | uppercase}} Details</h2>
+<div>
+    <label>Name: </label>
+    <input [(ngModel)]="name" placeholder="name" />
+</div>
+
+<ul *ngIf="users">
+    <li *ngFor="let user of users">
+        <p><strong>{{user.name}}</strong><small> ({{user.username}})</small></p>
+        <p>{{user.address.street}}, {{user.address.suite}}, {{user.address.city}}, {{user.address.zipcode}}</p>
+    </li>
+</ul>
