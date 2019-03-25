@@ -9,11 +9,12 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  firstClick() {
-    return console.log('data Service - clicked..!!');
+  getPosts() {
+    var posts = this.http.get('https://jsonplaceholder.typicode.com/posts')
+    return posts;
   }
 
   getUsers() {
-    return this.http.get('https://reqres.in/api/users')
+    return this.http.get('https://jsonplaceholder.typicode.com/users')
   }
 }
