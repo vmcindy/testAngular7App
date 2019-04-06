@@ -1,0 +1,22 @@
+.usersBlock {
+    margin: 20px 0;
+    padding: 0;
+    .user {
+        background: rgb(238, 238, 238);
+        padding: 10px 15px;
+        border-radius: 4px;
+        margin: 10px 0;
+        width: 100%;
+        display: inline-flex;
+        .image {
+            padding-top: 5px;
+            padding-right: 10px;
+            img {
+                border-radius: 50%;
+            }
+        }
+        .text {
+            display: inline-grid;
+        }
+    }
+}

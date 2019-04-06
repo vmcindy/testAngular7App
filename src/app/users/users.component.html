@@ -1,0 +1,27 @@
+<div class="usersBlock">
+    <h4>Users</h4>
+    <div class="row">
+        <div class="col-4" *ngFor="let user of users">
+            <div class="user">
+                <div class="image"><img src="../assets/images/placeholder/person.png"></div>
+                <div class="text">
+                    <a routerLink="/users/{{user.id}}"><strong>{{user.name}}</strong></a>
+                    <small class="text-secondary">{{user.email}}</small>
+                </div>
+                <!-- 
+                  <h6>{{user.name}} <span class="badge badge-primary">{{user.username}}</span></h6>
+                  <div class="dl-horizontal">
+                    <dt>Email</dt>
+                    <dd>{{user.email}}</dd>
+                    <dt>Phone</dt>
+                    <dd>{{user.phone}}</dd>
+                    <dt>Website</dt>
+                    <dd>{{user.website}}</dd>
+                    <dt>Address</dt>
+                    <dd>{{user.address.street}}, {{user.address.suite}}, {{user.address.city}}, {{user.address.zipcode}}</dd>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+</div>

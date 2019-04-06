@@ -15,15 +15,17 @@ export class HomeComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
+
     this.dataService.getPosts().subscribe(dataObj => {
       this.posts = dataObj;
-      console.log('posts', this.posts);
+      // console.log('posts', this.posts);
     });
 
     this.dataService.getUsers().subscribe(dataObj => {
       this.users = dataObj;
-      console.log('users', this.users);
+      // console.log('users', this.users);
     });
+
   }
 
 }

@@ -9,16 +9,18 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { UsersComponent } from './users/users.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomeComponent,
-    AboutComponent,
-    ContactComponent
+    ContactComponent,
+    UsersComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
