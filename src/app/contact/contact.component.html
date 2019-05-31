@@ -1,8 +1,8 @@
-<h1>Contact us</h1>
+<h4>Contact us</h4>
 
 <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
 
-    <h5 *ngIf="success">Your form is valid!</h5>
+    <h6 *ngIf="success">Your form is valid!</h6>
 
     <label>
       Name:
@@ -20,7 +20,7 @@
       </div>
     </label>
 
-    <input type="submit" value="Send message" class="cta">
+    <input type="submit" value="Send message" class="btn btn-primary">
 
 </form>
 

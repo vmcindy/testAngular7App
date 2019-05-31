@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-4">
+        <h4>Address Book</h4>
+        <div class="usersBlock">
+            <div class="user" *ngFor="let user of users" (click)="onSelect(user)" [class.selected]="user === selectedUser">
+                <div class=" image "><img src="../assets/images/placeholder/person.png "></div>
+                <div class="text ">
+                    <a><strong>{{user.name}}</strong></a>
+                    <small class="text-secondary ">{{user.email}}</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="offset-2 col-6 " *ngIf="selectedUser">
+        <div class="userBlock">
+            <h4>Contact Information</h4>
+            <div class="info">
+                <h5>{{selectedUser.name}} <span class="badge badge-primary">{{selectedUser.username}}</span></h5>
+                <div class="dl-horizontal">
+                    <dt>Email</dt>
+                    <dd>{{selectedUser.email}}</dd>
+                    <dt>Phone</dt>
+                    <dd>{{selectedUser.phone}}</dd>
+                    <dt>Website</dt>
+                    <dd>{{selectedUser.website}}</dd>
+                    <dt>Address</dt>
+                    <dd>
+                        <span *ngIf="selectedUser.address.street">{{selectedUser.address.street}}, </span>
+                        <span *ngIf="selectedUser.address.suite">{{selectedUser.address.suite}}, </span>
+                        <span *ngIf="selectedUser.address.city">{{selectedUser.address.city}}, </span>
+                        <span *ngIf="selectedUser.address.zipcode">{{selectedUser.address.zipcode}}</span>
+                    </dd>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
