@@ -1,21 +1,11 @@
 .userBlock {
-    margin: 20px 0;
-    padding: 0;
-    .user {
-        background: rgb(238, 238, 238);
+    position: sticky;
+    top: 80px;
+    .info {
+        background: #eee;
         padding: 10px 15px;
         border-radius: 4px;
         margin: 10px 0;
         width: 100%;
-        .image {
-            padding-top: 5px;
-            padding-right: 10px;
-            img {
-                border-radius: 50%;
-            }
-        }
-        .text {
-            display: inline-grid;
-        }
     }
 }

@@ -23,9 +23,6 @@ export class AddressbookComponent implements OnInit {
 
   onSelect(user: User): void {
     this.selectedUser = user;
-
-    console.log('user', user);
-
   }
 
 }
