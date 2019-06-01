@@ -1,7 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../data.service';
-import { User } from '../object-classes/user';
 
 @Component({
   selector: 'app-user',
@@ -10,8 +9,7 @@ import { User } from '../object-classes/user';
 })
 export class UserComponent implements OnInit {
 
-  @Input() user: User;
-  selectedUser: object;
+  @Input() selectedUser: object;
   
   constructor(
     private route: ActivatedRoute,
@@ -20,10 +18,8 @@ export class UserComponent implements OnInit {
 
   ngOnInit() {
 
-    // Checking if the call is from another component or a route 
-    if(this.user) {
-      this.selectedUser = this.user;
-    } else {
+    // Checking if the call has a route parameter 
+    if(this.route.snapshot.paramMap.get('id') ) {
       const id = this.route.snapshot.paramMap.get('id');
       this.dataService.getUser(id).subscribe(dataObj => {
         this.selectedUser = dataObj;
