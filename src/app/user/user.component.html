@@ -1,21 +1,23 @@
 <div class="userBlock">
     <h4>Contact Information</h4>
-    <div class="info" *ngIf="selectedUser">
-        <h5>{{selectedUser.name}} <span class="badge badge-primary">{{selectedUser.username}}</span></h5>
+    <div class="info" *ngIf="user">
+        <h5>{{user.name}} <span class="badge badge-primary">{{user.username}}</span></h5>
         <div class="dl-horizontal">
             <dt>Email</dt>
-            <dd>{{selectedUser.email}}</dd>
+            <dd>{{user.email}}</dd>
             <dt>Phone</dt>
-            <dd>{{selectedUser.phone}}</dd>
+            <dd>{{user.phone}}</dd>
             <dt>Website</dt>
-            <dd>{{selectedUser.website}}</dd>
+            <dd>{{user.website}}</dd>
             <dt>Address</dt>
-            <dd *ngIf="selectedUser.address">
-                <span>{{selectedUser.address.street}}, </span>
-                <span>{{selectedUser.address.suite}}, </span>
-                <span>{{selectedUser.address.city}}, </span>
-                <span>{{selectedUser.address.zipcode}}</span>
+            <dd *ngIf="user.address">
+                <span>{{user.address.street}}, </span>
+                <span>{{user.address.suite}}, </span>
+                <span>{{user.address.city}}, </span>
+                <span>{{user.address.zipcode}}</span>
             </dd>
         </div>
     </div>
+    <input [(ngModel)]="user.name" (blur)="onKey($event)">
+    <p>{{values}}</p>
 </div>
