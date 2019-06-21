@@ -10,17 +10,17 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   getPosts() {
-    var posts = this.http.get('https://jsonplaceholder.typicode.com/posts');
+    var posts = this.http.get('http://localhost:3300/posts');
     return posts;
   }
 
   getUsers() {
-    var users = this.http.get('https://jsonplaceholder.typicode.com/users');
+    var users = this.http.get('http://localhost:3300/users');
     return users;
   }
 
   getUser(id) {
-    var user =  this.http.get('https://jsonplaceholder.typicode.com/users/' + id);
+    var user =  this.http.get('http://localhost:3300/users/' + id);
     return user;
   }
 

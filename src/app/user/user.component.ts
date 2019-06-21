@@ -30,7 +30,7 @@ export class UserComponent implements OnChanges {
 
   ngOnInit() {
 
-    console.log('OnInit' );
+    this.logIt('OnInit');
     
     // Checking if the call has a route parameter 
     if(this.route.snapshot.paramMap.get('id') ) {
@@ -42,7 +42,7 @@ export class UserComponent implements OnChanges {
   }
 
   getUser(id) {
-    var user =  this.http.get('https://jsonplaceholder.typicode.com/users/' + id);
+    var user =  this.http.get('http://localhost:3300/users/' + id);
     return user;
   }
 

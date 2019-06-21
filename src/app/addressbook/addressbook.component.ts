@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../data.service';
 
 import { User } from '../object-classes/user';
@@ -12,12 +12,12 @@ import { LoggerService } from '../logger.service';
   providers:  [ LoggerService ]
 })
 export class AddressbookComponent implements OnInit {
-
+  private logger: LoggerService;
   users: object;
   selectedUser: User;
   hookLog: string[];
-  private logger: LoggerService;
   showPage: boolean;
+  showPopup: boolean;
 
   constructor(private dataService: DataService,logger: LoggerService) {
     this.logger = logger;
@@ -25,20 +25,33 @@ export class AddressbookComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.showPage =  true;
+    this.showPage = false;
+    this.showPopup = false;
     this.dataService.getUsers().subscribe(dataObj => {
       this.users = dataObj;
     });
   }
 
-  onSelect(user: User, event: any): void {
+  onSelect(user: User): void {
+    event.stopPropagation();
+    this.showPage =  true;
+    this.showPopup = false;
     this.selectedUser = user;
-    // console.log('event', event);
   }
 
-  onClose(): void {
+  onClose(section: string): void {
     this.showPage = false;
-    // console.log('event', event);
   }
 
+  popupView(user: User, event: any): void {
+    event.stopPropagation();
+    this.showPopup = true;
+    this.showPage = false;
+    this.selectedUser = user;
+  }
+
+  closePopup(viewPopup) { 
+    this.showPopup = viewPopup;
+    console.log('onChange');
+  }
 }

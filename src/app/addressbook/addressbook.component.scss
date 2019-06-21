@@ -1,6 +1,15 @@
 .usersBlock {
     margin: 10px 0;
     padding: 0;
+    position: sticky;
+    top: 80px;
+    .info {
+        background: #eee;
+        padding: 10px 15px;
+        border-radius: 4px;
+        margin: 10px 0;
+        width: 100%;
+    }
     .user {
         background: #eee;
         padding: 10px 15px;
@@ -8,12 +17,6 @@
         margin: 0 0 10px;
         width: 100%;
         display: inline-flex;
-        &:hover {
-            cursor: pointer;
-        }
-        &.selected {
-            background: #75C3EC;
-        }
         .image {
             padding-top: 5px;
             padding-right: 10px;
@@ -24,17 +27,23 @@
         .text {
             display: inline-grid;
         }
-    }
-}
-
-.userBlock {
-    position: sticky;
-    top: 80px;
-    .info {
-        background: #eee;
-        padding: 10px 15px;
-        border-radius: 4px;
-        margin: 10px 0;
-        width: 100%;
+        .badge {
+            right: 12px;
+            position: absolute;
+            display: none;
+        }
+        &:hover {
+            cursor: pointer;
+            .badge {
+                display: block;
+                opacity: .8;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+        &.selected {
+            background: #75C3EC;
+        }
     }
 }

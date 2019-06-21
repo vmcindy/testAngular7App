@@ -13,7 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './user/user.component';
 import { AddressbookComponent } from './addressbook/addressbook.component';
-import { SpyDirective } from './spy.directive';
+import { PopupComponent } from './popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { SpyDirective } from './spy.directive';
     UsersComponent,
     UserComponent,
     AddressbookComponent,
-    SpyDirective
+    PopupComponent
   ],
   imports: [
     BrowserModule,
