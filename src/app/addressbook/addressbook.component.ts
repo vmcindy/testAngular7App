@@ -52,6 +52,5 @@ export class AddressbookComponent implements OnInit {
 
   closePopup(viewPopup) { 
     this.showPopup = viewPopup;
-    console.log('onChange');
   }
 }

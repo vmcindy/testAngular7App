@@ -47,3 +47,12 @@
         }
     }
 }
+
+.userDetails {
+    ul {
+        padding-left: 25px;
+        list-style: initial;
+        max-height: 120px;
+        overflow-y: scroll;
+    }
+}

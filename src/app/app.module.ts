@@ -14,6 +14,7 @@ import { UsersComponent } from './users/users.component';
 import { UserComponent } from './user/user.component';
 import { AddressbookComponent } from './addressbook/addressbook.component';
 import { PopupComponent } from './popup/popup.component';
+import { AlertsComponent } from './alerts/alerts.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PopupComponent } from './popup/popup.component';
     UsersComponent,
     UserComponent,
     AddressbookComponent,
-    PopupComponent
+    PopupComponent,
+    AlertsComponent
   ],
   imports: [
     BrowserModule,

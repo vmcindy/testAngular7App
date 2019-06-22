@@ -7,21 +7,28 @@ import { HttpClient } from '@angular/common/http';
 
 export class DataService {
 
+  apiUrl: string = 'http://localhost:3300/';
+
   constructor(private http: HttpClient) { }
 
   getPosts() {
-    var posts = this.http.get('http://localhost:3300/posts');
+    var posts = this.http.get(this.apiUrl + 'posts');
     return posts;
   }
 
   getUsers() {
-    var users = this.http.get('http://localhost:3300/users');
+    var users = this.http.get(this.apiUrl + 'users');
+    var photos = this.http.get(this.apiUrl + 'photos');
     return users;
   }
 
   getUser(id) {
-    var user =  this.http.get('http://localhost:3300/users/' + id);
+    var user =  this.http.get(this.apiUrl + 'users/' + id);
     return user;
   }
 
+  getPhotos() {
+    var photos = this.http.get(this.apiUrl + 'photos');
+    return photos;
+  }
 }

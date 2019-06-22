@@ -7,10 +7,8 @@ import { Component, OnInit, Input, OnChanges,
   OnDestroy,
   SimpleChanges} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-// import { DataService } from '../data.service';
+import { DataService } from '../data.service';
 import { LoggerService }    from '../logger.service';
-
-import { HttpClient } from '@angular/common/http'; 
 
 @Component({
   selector: 'app-user',
@@ -24,7 +22,7 @@ export class UserComponent implements OnChanges {
   
   constructor(
     private route: ActivatedRoute,
-    private http: HttpClient,
+    private DataService: DataService,
     private logger: LoggerService
   ) { }
 
@@ -35,15 +33,10 @@ export class UserComponent implements OnChanges {
     // Checking if the call has a route parameter 
     if(this.route.snapshot.paramMap.get('id') ) {
       const id = this.route.snapshot.paramMap.get('id');
-      this.getUser(id).subscribe(dataObj => {
+      this.DataService.getUser(id).subscribe(dataObj => {
         this.user = dataObj;
       });
     }
-  }
-
-  getUser(id) {
-    var user =  this.http.get('http://localhost:3300/users/' + id);
-    return user;
   }
 
   onKey(event: any) {

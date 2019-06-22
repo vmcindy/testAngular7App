@@ -9,6 +9,7 @@ import { DataService } from '../data.service';
 export class UsersComponent implements OnInit {
 
   users: Object;
+  photos: Object;
 
   constructor(private dataService: DataService) { }
 
@@ -18,6 +19,9 @@ export class UsersComponent implements OnInit {
       this.users = dataObj;
     });
 
+    this.dataService.getPhotos().subscribe(dataObj => {
+      this.photos = dataObj;
+    });
   }
 
 }

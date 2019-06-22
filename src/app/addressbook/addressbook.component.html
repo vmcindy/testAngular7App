@@ -10,15 +10,17 @@
                     <small class="text-secondary ">{{user.email}}</small>
                 </div>
             </div>
-            <app-popup *ngIf="selectedUser && showPopup" [user]="selectedUser" (viewPopup)="closePopup($)"></app-popup>
         </div>
     </div>
     <div class="offset-2 col-6 ">
-        <app-user *ngIf="selectedUser && showPage" [user]="selectedUser"></app-user>
-        <hr *ngIf="selectedUser && showPage">
-        <button *ngIf="selectedUser && showPage" type="button" class="btn btn-primary" (click)="onClose()">Close</button>
-        <!-- <ol>
-            <li *ngFor="let msg of hookLog">Lifecycle Hook - {{msg}}</li>
-        </ol> -->
+        <div class="userDetails">
+            <button *ngIf="selectedUser && showPage" type="button" class="btn btn-sm btn-primary float-right" (click)="onClose()">Close</button>
+            <app-user *ngIf="selectedUser && showPage" [user]="selectedUser"></app-user>
+            <h4>Lifecycle Hooks</h4>
+            <ul class="card">
+                <li *ngFor="let msg of hookLog">{{msg}}</li>
+            </ul>
+        </div>
     </div>
 </div>
+<app-popup *ngIf="selectedUser && showPopup" [user]="selectedUser" (viewPopup)="closePopup($)"></app-popup>
