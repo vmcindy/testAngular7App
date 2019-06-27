@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output  } from '@angular/core';
 
 @Component({
   selector: 'app-alerts',
@@ -10,6 +10,10 @@ export class AlertsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  alertResponse (boolRes) {
+    // this.viewPopup.emit(false);
   }
 
 }

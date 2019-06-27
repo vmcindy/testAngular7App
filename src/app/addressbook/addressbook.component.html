@@ -4,8 +4,12 @@
         <div class="usersBlock">
             <div class="user" *ngFor="let user of users" (click)="onSelect(user)" [class.selected]="user === selectedUser">
                 <div class=" image "><img src="../assets/images/placeholder/person.png "></div>
+                <section class="badges">
+                    <span class="badge badge-danger" (click)="deleteUser(user, $event)"><i class="far fa-trash-alt"></i></span>
+                    <span class="badge badge-warning" (click)="popupView(user, $event)"><i class="fas fa-pencil-alt"></i></span>
+                    <span class="badge badge-info" (click)="popupView(user, $event)"><i class="far fa-eye"></i></span>
+                </section>
                 <div class="text ">
-                    <span class="badge badge-info" (click)="popupView(user, $event)">View More</span>
                     <strong>{{user.name}}</strong>
                     <small class="text-secondary ">{{user.email}}</small>
                 </div>
@@ -24,3 +28,4 @@
     </div>
 </div>
 <app-popup *ngIf="selectedUser && showPopup" [user]="selectedUser" (viewPopup)="closePopup($)"></app-popup>
+<app-alerts *ngIf="selectedUser && showAlert"></app-alerts>

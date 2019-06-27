@@ -27,10 +27,14 @@
         .text {
             display: inline-grid;
         }
-        .badge {
+        .badges {
             right: 12px;
             position: absolute;
+            display: inline-flex;
+        }
+        .badge {
             display: none;
+            margin-left: 5px;
         }
         &:hover {
             cursor: pointer;
@@ -43,7 +47,7 @@
             }
         }
         &.selected {
-            background: #75C3EC;
+            background: #d2ebf9;
         }
     }
 }

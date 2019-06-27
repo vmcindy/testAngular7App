@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 
 import { User } from '../object-classes/user';
@@ -18,6 +18,7 @@ export class AddressbookComponent implements OnInit {
   hookLog: string[];
   showPage: boolean;
   showPopup: boolean;
+  showAlert: boolean;
 
   constructor(private dataService: DataService,logger: LoggerService) {
     this.logger = logger;
@@ -52,5 +53,9 @@ export class AddressbookComponent implements OnInit {
 
   closePopup(viewPopup) { 
     this.showPopup = viewPopup;
+  }
+
+  deleteUser() {
+    this.showAlert = true;
   }
 }
