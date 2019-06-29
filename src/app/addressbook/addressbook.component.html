@@ -5,9 +5,9 @@
             <div class="user" *ngFor="let user of users" (click)="onSelect(user)" [class.selected]="user === selectedUser">
                 <div class=" image "><img src="../assets/images/placeholder/person.png "></div>
                 <section class="badges">
-                    <span class="badge badge-danger" (click)="deleteUser(user, $event)"><i class="far fa-trash-alt"></i></span>
-                    <span class="badge badge-warning" (click)="popupView(user, $event)"><i class="fas fa-pencil-alt"></i></span>
-                    <span class="badge badge-info" (click)="popupView(user, $event)"><i class="far fa-eye"></i></span>
+                    <span class="badge badge-danger" (click)="deleteUserAlert(user.id, $event)"><i class="far fa-trash-alt"></i></span>
+                    <span class="badge badge-warning" (click)="viewPopup(user, $event)"><i class="fas fa-pencil-alt"></i></span>
+                    <span class="badge badge-info" (click)="viewPopup(user, $event)"><i class="far fa-eye"></i></span>
                 </section>
                 <div class="text ">
                     <strong>{{user.name}}</strong>
@@ -18,7 +18,7 @@
     </div>
     <div class="offset-2 col-6 ">
         <div class="userDetails">
-            <button *ngIf="selectedUser && showPage" type="button" class="btn btn-sm btn-primary float-right" (click)="onClose()">Close</button>
+            <button *ngIf="selectedUser && showPage" type="button" class="btn btn-sm btn-secondary float-right" (click)="onClose()">Close</button>
             <app-user *ngIf="selectedUser && showPage" [user]="selectedUser"></app-user>
             <h4>Lifecycle Hooks</h4>
             <ul class="card">
@@ -27,5 +27,5 @@
         </div>
     </div>
 </div>
-<app-popup *ngIf="selectedUser && showPopup" [user]="selectedUser" (viewPopup)="closePopup($)"></app-popup>
-<app-alerts *ngIf="selectedUser && showAlert"></app-alerts>
+<app-popup *ngIf="selectedUser && showPopup" (viewPopup)="closePopup($event)" [user]="selectedUser"></app-popup>
+<app-alerts *ngIf="selectedUser && showAlert" (alertResponse)="deleteUser($event)" message="You are about to delete this record. Do you wish to continue?"></app-alerts>

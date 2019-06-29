@@ -33,6 +33,7 @@ export class AddressbookComponent implements OnInit {
     });
   }
 
+  // viewing the user info on page
   onSelect(user: User): void {
     event.stopPropagation();
     this.showPage =  true;
@@ -40,22 +41,33 @@ export class AddressbookComponent implements OnInit {
     this.selectedUser = user;
   }
 
+  // closing the on page user info section
   onClose(section: string): void {
     this.showPage = false;
   }
 
-  popupView(user: User, event: any): void {
+  // viewing user info on a popup 
+  viewPopup(user: User, event: any): void {
     event.stopPropagation();
     this.showPopup = true;
     this.showPage = false;
     this.selectedUser = user;
   }
 
+  // closing the popup 
   closePopup(viewPopup) { 
     this.showPopup = viewPopup;
   }
 
-  deleteUser() {
+  // opening a alert for delete user confirmation
+  deleteUserAlert(id: number, event: any) {
     this.showAlert = true;
+    console.log('userId', 1);
+  }
+
+  // deleting user based on delete confirmation
+  deleteUser(alertResponse) {
+    this.showAlert = false;
+    console.log('alertResponse', alertResponse);
   }
 }

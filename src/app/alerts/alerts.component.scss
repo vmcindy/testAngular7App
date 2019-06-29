@@ -9,18 +9,35 @@
     overflow: auto;
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
-}
-
-.alert-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    position: relative;
-    border: 1px solid #888;
-    width: 600px;
-    max-width: 80%;
-    border-radius: 5px;
-    border-color: #888;
-    border-width: 1px;
-    border-style: solid;
+    .alert-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        position: relative;
+        border: 1px solid #888;
+        width: 600px;
+        max-width: 80%;
+        border-radius: 5px;
+        border-color: #888;
+        border-width: 1px;
+        border-style: solid;
+        .contentPanel {
+            display: flex;
+            .image {
+                float: left;
+                padding: 0 10px;
+            }
+            .msg {
+                font-size: 16px;
+                padding: 5px 20px;
+            }
+        }
+        .btnPanel {
+            text-align: center;
+            .btn {
+                width: 60px;
+                margin: 0 10px;
+            }
+        }
+    }
 }

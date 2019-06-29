@@ -1,6 +1,12 @@
 <div class="alert-content ">
-    <p>Alert message to be placed here..!!</p>
-    <p>{{message}}</p>
-    <button type="button" class="btn btn-sm" (click)="alertResponse(false)">Cancel</button>
-    <button type="button" class="btn btn-sm btn-primary" (click)="alertResponse(true)">Okay</button>
+    <div class="contentPanel">
+        <div class="image">
+            <i class="fas fa-3x fa-exclamation-triangle text-warning"></i>
+        </div>
+        <p class="msg">{{message}}</p>
+    </div>
+    <div class="btnPanel">
+        <button type="button" class="btn btn-sm btn-secondary" (click)="responseFunction(false)">Cancel</button>
+        <button type="button" class="btn btn-sm btn-primary" (click)="responseFunction(true)">Okay</button>
+    </div>
 </div>

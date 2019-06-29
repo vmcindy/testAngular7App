@@ -7,13 +7,21 @@ import { Component, EventEmitter, OnInit, Input, Output  } from '@angular/core';
 })
 export class AlertsComponent implements OnInit {
 
+  // _message: string;
+  // @Input() set message(message: string) {
+  //   this._message = message;
+  // }
+  // get message(): string { return this._message; }
+
+  @Input() message: string;
+  @Output() alertResponse = new EventEmitter<boolean>();
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  alertResponse (boolRes) {
-    // this.viewPopup.emit(false);
+  responseFunction (boolRes) {
+    this.alertResponse.emit(boolRes);
   }
 
 }
