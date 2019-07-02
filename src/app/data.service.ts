@@ -26,12 +26,14 @@ export class DataService {
 
   getUser(id) {
     var user =  this.http.get(this.url + 'users/' + id);
+    console.log('service - user', user);
     return user;
   }
 
   deleteUser(id) {
-    var user =  this.http.get(this.url + 'users/' + id);
-    return user;
+    var res = this.http.delete(this.url + 'users/' + id);
+    console.log('service - res', res);
+    return res;
   }
 
   getPhotos() {

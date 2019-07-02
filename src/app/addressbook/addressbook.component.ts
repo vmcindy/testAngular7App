@@ -60,14 +60,23 @@ export class AddressbookComponent implements OnInit {
   }
 
   // opening a alert for delete user confirmation
-  deleteUserAlert(id: number, event: any) {
+  deleteUserAlert(user: User, id: string, event: any) {
     this.showAlert = true;
-    console.log('userId', 1);
+    this.selectedUser = user;
   }
 
   // deleting user based on delete confirmation
   deleteUser(alertResponse) {
     this.showAlert = false;
+
     console.log('alertResponse', alertResponse);
+
+    if (alertResponse) {
+      this.dataService.deleteUser(this.selectedUser.id).subscribe();
+      
+      this.dataService.getUsers().subscribe(dataObj => {
+        this.users = dataObj;
+      });
+    }
   }
 }

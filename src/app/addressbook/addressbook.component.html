@@ -5,7 +5,7 @@
             <div class="user" *ngFor="let user of users" (click)="onSelect(user)" [class.selected]="user === selectedUser">
                 <div class=" image "><img src="../assets/images/placeholder/person.png "></div>
                 <section class="badges">
-                    <span class="badge badge-danger" (click)="deleteUserAlert(user.id, $event)"><i class="far fa-trash-alt"></i></span>
+                    <span class="badge badge-danger" (click)="deleteUserAlert(user, user._id, $event)"><i class="far fa-trash-alt"></i></span>
                     <span class="badge badge-warning" (click)="viewPopup(user, $event)"><i class="fas fa-pencil-alt"></i></span>
                     <span class="badge badge-info" (click)="viewPopup(user, $event)"><i class="far fa-eye"></i></span>
                 </section>
