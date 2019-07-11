@@ -20,7 +20,7 @@ export class AddressbookComponent implements OnInit {
   showPopup: boolean;
   showAlert: boolean;
 
-  constructor(private dataService: DataService,logger: LoggerService) {
+  constructor(private dataService: DataService, logger: LoggerService) {
     this.logger = logger;
     this.hookLog = logger.logs;
   }

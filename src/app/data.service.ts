@@ -7,8 +7,8 @@ import { HttpClient } from '@angular/common/http';
 
 export class DataService {
   
-  // url: string = 'https://jsonplaceholder.typicode.com/';
-  url: string = 'http://localhost:3300/'; //
+  url: string = 'https://jsonplaceholder.typicode.com/';
+  // url: string = 'http://localhost:3300/'; //
   // make sure to install CORS plugin on browser
 
   constructor(private http: HttpClient) { }
