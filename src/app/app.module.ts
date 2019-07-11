@@ -15,10 +15,22 @@ import { UserComponent } from './user/user.component';
 import { AddressbookComponent } from './addressbook/addressbook.component';
 import { PopupComponent } from './popup/popup.component';
 import { AlertsComponent } from './alerts/alerts.component';
-import { AdDirective } from './ad.directive';
-import { AdBannerComponent } from './ad-banner/ad-banner.component';
+
+import { AdDirective } from './ad/ad.directive';
+import { AdBannerComponent } from './ad/ad-banner.component';
+import { AdService } from './ad/ad.service';
+import { AdJobComponent } from './ad/ad-struct-job.component';
+import { AdProfileComponent } from './ad/ad-struct-profile.component';
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
+  ],
+  providers: [AdService],
   declarations: [
     AppComponent,
     NavComponent,
@@ -29,17 +41,12 @@ import { AdBannerComponent } from './ad-banner/ad-banner.component';
     AddressbookComponent,
     PopupComponent,
     AlertsComponent,
-    AdDirective,
-    AdBannerComponent
+    AdBannerComponent,
+    AdJobComponent,
+    AdProfileComponent,
+    AdDirective
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    FormsModule
-  ],
-  providers: [],
+  entryComponents: [ AdJobComponent, AdProfileComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
