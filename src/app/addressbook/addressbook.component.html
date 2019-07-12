@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-4">
+    <div class="col-6">
         <h4>Address Book</h4>
         <div class="usersBlock">
             <div class="user" *ngFor="let user of users" (click)="onSelect(user)" [class.selected]="user === selectedUser">
@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-    <div class="offset-2 col-6 ">
+    <div class="col-6 ">
         <div class="userDetails">
             <button *ngIf="selectedUser && showPage" type="button" class="btn btn-sm btn-secondary float-right" (click)="onClose()">Close</button>
             <app-user *ngIf="selectedUser && showPage" [user]="selectedUser"></app-user>

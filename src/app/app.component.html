@@ -1,5 +1,11 @@
 <app-nav></app-nav>
 <section class="container-fluid app-body">
-    <router-outlet></router-outlet>
+    <div class="row">
+        <div class="col-9">
+            <router-outlet></router-outlet>
+        </div>
+        <div class="col-3">
+            <app-ad-banner [ads]="ads"></app-ad-banner>
+        </div>
+    </div>
 </section>
-<app-ad-banner [ads]="ads"></app-ad-banner>

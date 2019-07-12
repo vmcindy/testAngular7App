@@ -8,7 +8,7 @@ import { AdComponent } from './ad.component';
   selector: 'app-ad-banner',
   template: `
               <div class="ad-container">
-                <h4>Advertisements</h4>
+                <h4>Ads</h4>
                 <ng-template ad-host></ng-template>
               </div>
             `,
@@ -48,7 +48,7 @@ export class AdBannerComponent implements OnInit, OnDestroy {
   getAds() {
     this.interval = setInterval(() => {
       this.loadComponent();
-    }, 3000);
+    }, 5000);
   }
 
 }
